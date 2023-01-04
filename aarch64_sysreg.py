@@ -870,6 +870,7 @@ class Aarch64SysRegPlugin(idaapi.plugin_t):
             with open(APPLE_REGS_CFGFILE, "r") as fd:
                 d = json.load(fd)
         except:
+            d = []
             print(("[-] {0} : Loading apple_regs.json failed, skipping".format(self.wanted_name)))
 
         for r in d:
